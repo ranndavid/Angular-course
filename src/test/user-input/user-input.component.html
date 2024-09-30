@@ -1,0 +1,62 @@
+<div class="form-container">
+  <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+    <mat-card class="user-form-card">
+      <mat-card-title class="form-title">{{ editingIndex !== null ? 'Update User' : 'Add User' }}</mat-card-title>
+      <mat-card-content>
+
+        <!-- Name Field -->
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput [(ngModel)]="user.name" name="name" required>
+          <mat-error *ngIf="userForm.controls['name']?.invalid && userForm.controls['name']?.touched">
+            Name is required.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Age Field -->
+        <mat-form-field class="full-width">
+          <mat-label>Age</mat-label>
+          <input matInput type="number" [(ngModel)]="user.age" name="age" required min="1">
+          <mat-error *ngIf="userForm.controls['age']?.invalid && userForm.controls['age']?.touched">
+            Age is required and must be a positive number.
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Gender Field -->
+        <mat-form-field class="full-width">
+          <mat-label>Gender</mat-label>
+          <mat-select [(ngModel)]="user.gender" name="gender" required>
+            <mat-option value="" disabled>Select your gender</mat-option>
+            <mat-option value="male">Male</mat-option>
+            <mat-option value="female">Female</mat-option>
+            <mat-option value="other">Other</mat-option>
+          </mat-select>
+          <mat-error *ngIf="userForm.controls['gender']?.invalid && userForm.controls['gender']?.touched">
+            Gender is required.
+          </mat-error>
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button type="submit" mat-raised-button color="primary" [disabled]="userForm.invalid">
+          {{ editingIndex !== null ? 'Update User' : 'Add User' }}
+        </button>
+        <button type="reset" (click)="resetForm(userForm)" mat-raised-button color="warn">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+
+  <h2>User List</h2>
+  <mat-list>
+    <mat-list-item *ngFor="let u of users; let i = index">
+      <span>{{ u.name }} ({{ u.age }} years old, {{ u.gender }})</span>
+      <button mat-icon-button color="accent" (click)="editUser(i)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deleteUser(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>

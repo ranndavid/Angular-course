@@ -1,0 +1,27 @@
+<!-- interparation binding data from class to template -->
+<div class="interparation">   
+Hello {{name}}  <br>
+<!-- can calculate number -->
+Calculate is   {{4*2}}  <br>
+<!-- can tor sting  -->
+{{'This is' +name}} <br>
+<!-- call function from property js -->
+ {{name.length}}  <br>
+ <!-- can use method js -->
+  {{name.toUpperCase()}} <br>
+  <!-- call function or method from class  -->
+   {{calculate()}} <br>
+   <!-- can't do  -->
+    <!-- assign  ex {{a = 2+3}}  {{name = "VD"}}-->
+   <!-- interparation -->
+    <input type="text" value="" id="{{name}}">
+    <!-- property binding --> 
+    <input type="text" value="" [id]="name">
+
+    <!-- why we use binding instead of interparation becuase  Limitaion of interperation : it can bind  only string value, (boolean cannot) -->
+     <input type="text" disabled="{{false}}">
+     <!-- so we user property binding  in boolean  -->
+      <input type="text" [disabled] ="false">
+<h1>My Gender is {{gender}}</h1>
+<button type="button" [disabled]="isUnchanged">Disabled Button</button>
+</div>

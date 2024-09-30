@@ -1,0 +1,29 @@
+.container {
+    max-width: 400px; /* Maximum width for the input and buttons */
+    margin: auto; /* Center the container */
+    text-align: center; /* Center text inside the container */
+}
+
+.form-control {
+    border: 2px solid #007bff; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the input */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding on button */
+    color: white; /* Text color */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.result {
+    margin-top: 10px; /* Space above the result text */
+    font-size: 18px; /* Font size for the result */
+    color: #333; /* Text color */
+}

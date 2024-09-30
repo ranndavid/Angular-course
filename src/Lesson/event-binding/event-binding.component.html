@@ -1,0 +1,7 @@
+<!-- event-binding : event on which control  (click) is event that binding data  template to class-->
+<input type="text" name="" text="">
+<button type="button" (click)="showMessage()">Show</button> 
+<button type="button" (click)="name = 'Vid '">Show with event handerler</button> 
+<!-- use $event for console to show info about click -->
+<button type="button" (click)="showInfo($event)">Show with $event</button> <br>   
+{{name}}

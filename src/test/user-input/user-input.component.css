@@ -1,0 +1,78 @@
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.user-form-card {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #3f51b5;
+  margin-bottom: 20px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+button[mat-raised-button] {
+  margin-top: 20px;
+}
+
+h2 {
+  color: #3f51b5;
+  text-align: center;
+}
+
+mat-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-list-item span {
+  font-size: 1.1rem;
+}
+
+mat-icon {
+  font-size: 1.5rem;
+}
+mat-icon:hover {
+  color: red; /* The color change when hovering */
+}
+mat-card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.mat-form-field {
+  margin-bottom: 16px;
+}
+mat-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-row {
+  font-weight: bold;
+}
+
+.header-item, .user-item {
+  flex: 1;
+  text-align: left;
+}
+
+.user-actions {
+  display: flex;
+  gap: 8px; /* Space between edit and delete buttons */
+}
+
