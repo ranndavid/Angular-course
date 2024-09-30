@@ -11,6 +11,8 @@ import { MatTableModule } from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 interface User {
   name: string;
   age: number | null;
@@ -30,12 +32,19 @@ interface User {
     MatFormFieldModule,
     MatCardModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatSlideToggleModule
   ],
   templateUrl: './user-input.component.html',
   styleUrls: ['./user-input.component.css']
 })
 export class UserInputComponent {
+
+  isToggled = false;
+  onToggle(event: any) {
+    console.log('Toggle changed:', this.isToggled);
+  }
+
   user: User = { name: '', age: null, gender: '' };
   users: User[] = [];
   editingIndex: number | null = null; // Track the index of the user being edited
@@ -53,7 +62,7 @@ export class UserInputComponent {
       this.resetForm(form); // Reset the form after adding/updating
       console.log("User:", this.users); // Log current users array
     } else {
-      alert("Please fill in all required fields correctly.");
+      
     }
   }
 
