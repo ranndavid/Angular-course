@@ -1,0 +1,24 @@
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <div class="input" style="margin: auto;">
+       
+      <mat-form-field class="example-full-width">
+        <mat-label><mat-icon>call</mat-icon> Phone</mat-label>
+        <input matInput required formControlName="phone" name="phone" type="phone">
+      
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+        <mat-label><mat-icon>vpn_key</mat-icon> Password</mat-label>
+        <input matInput required formControlName="password" name="password" type="password">
+       
+      </mat-form-field>
+  
+      <div class="example-button-row" style="margin: auto;">
+        <button type="submit" class="btn-signUp" mat-flat-button>
+          <mat-icon>exit_to_app</mat-icon> Login    
+        </button>
+      </div>
+    </div>
+</form>

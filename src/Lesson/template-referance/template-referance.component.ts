@@ -12,7 +12,7 @@ export class TemplateReferanceComponent {
 
   show(text: string) {
     this.name = text; //pel assign domlai text nus vea jol tv kan name
-
+    
   }
   display(jmr: any) {
     this.name = jmr.value;

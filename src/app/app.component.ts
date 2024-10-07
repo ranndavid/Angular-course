@@ -7,11 +7,12 @@ import { TwowayBindingComponent } from "../Lesson/twoway-binding/twoway-binding.
 import { StructureDirectiveComponent } from "../Lesson/structure-directive/structure-directive.component";
 import { ComponentInteractionComponent } from "../Lesson/component-interaction/component-interaction.component";
 import { UserInputComponent } from "../test/user-input/user-input.component";
+import { FormGroupComponent } from "../test/form-group/form-group.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, InterperationComponent, EventBindingComponent, TemplateReferanceComponent, TwowayBindingComponent, StructureDirectiveComponent, ComponentInteractionComponent, UserInputComponent],
+  imports: [RouterOutlet, InterperationComponent, EventBindingComponent, TemplateReferanceComponent, TwowayBindingComponent, StructureDirectiveComponent, ComponentInteractionComponent, UserInputComponent, FormGroupComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
