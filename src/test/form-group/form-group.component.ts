@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {FormControl, NgForm} from '@angular/forms';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -32,8 +32,21 @@ export class FormGroupComponent {
     password : new FormControl(''),
     
   });
+  users: UserData[] = [];
   
   onSubmit() {
-    console.log(this.profileForm.value);
+    if (this.profileForm.valid) {
+      // Push the form data to the users array
+      this.users.push(this.profileForm.value as UserData);
+      console.log('User array:', this.users);
+
+      // Emit the form data to parent if necessary
+      // this.onAddUser.emit(this.profileForm.value as UserData);
+      
+ 
+      this.profileForm.reset();
+    } else {
+      console.log('Form is invalid');
+    }
   }
 }
