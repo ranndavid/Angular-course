@@ -8,7 +8,7 @@ import { MatButton, MatIconAnchor } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { UserData } from './utill';
-
+import {MatTabsModule} from '@angular/material/tabs';
 
 @Component({
   selector: 'app-form-group',
@@ -20,7 +20,8 @@ import { UserData } from './utill';
     MatIconModule,
     MatButton,
     MatSelectModule,
-    CommonModule
+    CommonModule,
+    MatTabsModule
   ],
   templateUrl: './form-group.component.html',
   styleUrl: './form-group.component.css'
@@ -30,7 +31,7 @@ export class FormGroupComponent {
   profileForm = new FormGroup({
     phone : new FormControl(''),
     password : new FormControl(''),
-    
+    mail : new FormControl(' '),
   });
   users: UserData[] = [];
   

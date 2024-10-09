@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .example-card {
+    width: 600px;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures space between the tabs and button */
+    width: 100%;
+  }
+  
+  .btn-signup {
+    margin-left: 20px; /* Space between the button and tabs */
+    height: 40px;
+    align-self: center;
+  }
+  
+  .example-small-box,
+  .example-large-box {
+    padding: 20px;
+  }
+  

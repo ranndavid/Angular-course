@@ -8,11 +8,12 @@ import { StructureDirectiveComponent } from "../Lesson/structure-directive/struc
 import { ComponentInteractionComponent } from "../Lesson/component-interaction/component-interaction.component";
 import { UserInputComponent } from "../test/user-input/user-input.component";
 import { FormGroupComponent } from "../test/form-group/form-group.component";
+import { SignupComponent } from "../test/signup/signup.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, InterperationComponent, EventBindingComponent, TemplateReferanceComponent, TwowayBindingComponent, StructureDirectiveComponent, ComponentInteractionComponent, UserInputComponent, FormGroupComponent],
+  imports: [RouterOutlet, InterperationComponent, EventBindingComponent, TemplateReferanceComponent, TwowayBindingComponent, StructureDirectiveComponent, ComponentInteractionComponent, UserInputComponent, FormGroupComponent, SignupComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

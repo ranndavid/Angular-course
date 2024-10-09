@@ -1,0 +1,81 @@
+<div class="container">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div class="header-content">
+          <!-- Tab Group for Sign Up by Email/Phone -->
+          <mat-tab-group dynamicHeight (selectedTabChange)="onTabChange($event)">
+            <mat-tab label="Email">
+              <div class="example-small-box mat-elevation-z4">
+                <h2>Sign Up with Email</h2>
+                <form [formGroup]="signUpForm">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" type="email" placeholder="Email" />
+                    <mat-error *ngIf="signUpForm.get('email')?.hasError('required') && signUpForm.get('email')?.touched">
+                      Email is required.
+                    </mat-error>
+                    <mat-error *ngIf="signUpForm.get('email')?.hasError('email') && signUpForm.get('email')?.touched">
+                      Invalid email format.
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" type="password" placeholder="Password" />
+                    <mat-error *ngIf="signUpForm.get('password')?.hasError('required') && signUpForm.get('password')?.touched">
+                      Password is required.
+                    </mat-error>
+                  </mat-form-field>
+                </form>
+              </div>
+            </mat-tab>
+            <mat-tab label="Phone">
+              <div class="example-large-box mat-elevation-z4">
+                <h2>Sign Up with Phone</h2>
+                <form [formGroup]="signUpForm">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="phone" type="tel" placeholder="Phone number" />
+                    <mat-error *ngIf="signUpForm.get('phone')?.hasError('required') && signUpForm.get('phone')?.touched">
+                      Phone number is required.
+                    </mat-error>
+                    <mat-error *ngIf="signUpForm.get('phone')?.hasError('pattern') && signUpForm.get('phone')?.touched">
+                      Phone number must be 10 digits.
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" type="password" placeholder="Password" />
+                    <mat-error *ngIf="signUpForm.get('password')?.hasError('required') && signUpForm.get('password')?.touched">
+                      Password is required.
+                    </mat-error>
+                  </mat-form-field>
+                </form>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+  
+          <!-- Sign Up Button beside the Tab -->
+          <button 
+            mat-flat-button 
+            color="primary" 
+            style="margin-left: 20px;" 
+            (click)="onSubmit()">Sign Up
+          </button>
+        </div>
+      </mat-card-header>
+    </mat-card>
+  
+    <!-- Display the List of Submitted Users -->
+    <div>
+      <h3>Submitted Sign Ups</h3>
+      <ul>
+        <li *ngFor="let signUp of signUpList">
+          <!-- Conditionally display either email or phone based on input -->
+          <span *ngIf="signUp.email">Email: {{ signUp.email }},</span>
+          <span *ngIf="signUp.phone">Phone: {{ signUp.phone }},</span>
+          Password: {{ signUp.password }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
