@@ -1,0 +1,32 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" type="text" />
+    </div>
+  
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email" />
+    </div>
+  
+    <div formGroupName="address">
+      <label for="city">City:</label>
+      <input id="city" formControlName="city" type="text" />
+      <label for="zip">ZIP Code:</label>
+      <input id="zip" formControlName="zip" type="text" />
+    </div>
+  
+    <div>
+      <label>Skills:</label>
+      <ul>
+        <li *ngFor="let skill of skills.controls; let i = index">
+          <input [formControl]="skill" type="text" />
+          <button type="button" (click)="skills.removeAt(i)">Remove</button>
+        </li>
+      </ul>
+      <button type="button" (click)="addSkill('')">Add Skill</button>
+    </div>
+  
+    <button type="submit">Submit</button>
+  </form>
+  

@@ -9,23 +9,27 @@ import { ComponentInteractionComponent } from "../Lesson/component-interaction/c
 import { UserInputComponent } from "../test/user-input/user-input.component";
 import { FormGroupComponent } from "../test/form-group/form-group.component";
 import { SignupComponent } from "../test/signup/signup.component";
-
+import { TabComponent } from "../test/tab/tab.component";
+import { MenuComponent } from "../test/menu/menu.component";
+import { JsonFormComponent } from "../test/json-form/json-form.component";
+import { SearchComponent } from "../test/search/search.component";
+import { CommonModule } from '@angular/common'; // Import CommonModule
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, InterperationComponent, EventBindingComponent, TemplateReferanceComponent, TwowayBindingComponent, StructureDirectiveComponent, ComponentInteractionComponent, UserInputComponent, FormGroupComponent, SignupComponent],
+  imports: [CommonModule,RouterOutlet, InterperationComponent, EventBindingComponent, TemplateReferanceComponent, TwowayBindingComponent, StructureDirectiveComponent, ComponentInteractionComponent, UserInputComponent, FormGroupComponent, SignupComponent, TabComponent, MenuComponent, JsonFormComponent, SearchComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
 
   name = 'Tola';
-  theAge  = 0;
-  recieveAge(a:any) {
-  this.theAge =a ;
-}
+  theAge = 0;
+  recieveAge(a: any) {
+    this.theAge = a;
+  }
 
-  
+
 
 }
 

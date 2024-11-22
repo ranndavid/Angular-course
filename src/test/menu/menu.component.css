@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.table-section {
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+.detail-section {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+.container.show-detail .table-section {
+  width: 65%; /* Shrink table section when detail is visible */
+}
+
+.container.show-detail .detail-section {
+  width: 35%; /* Show detail section */
+  padding-left: 20px;
+}
+
+.detail-content {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+}

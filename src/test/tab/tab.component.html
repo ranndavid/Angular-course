@@ -1,0 +1,30 @@
+<mat-tab-group>
+    <mat-tab label="First">
+      <form [formGroup]="exampleForm" class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Favorite food</mat-label>
+          <input matInput placeholder="Enter your favorite food" formControlName="favoriteFood">
+          <mat-error *ngIf="exampleForm.get('favoriteFood')?.hasError('required') && exampleForm.get('favoriteFood')?.touched">
+            Favorite food is required.
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Fast food</mat-label>
+          <input matInput placeholder="Enter your fast food" formControlName="fastFood">
+          <mat-error *ngIf="exampleForm.get('fastFood')?.hasError('required') && exampleForm.get('fastFood')?.touched">
+            Fast food is required.
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- Submit Button -->
+        <button mat-raised-button color="primary" (click)="submitForm()">Submit</button>
+
+        <button mat-button (click)="openDialog()">Open dialog</button>
+      </form>
+    </mat-tab>
+  
+    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+  </mat-tab-group>
+  

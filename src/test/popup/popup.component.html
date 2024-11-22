@@ -1,0 +1,45 @@
+<h2>New Donation</h2>
+<form>
+  <mat-form-field class="example-full-width">
+    <mat-label>Patron ID</mat-label>
+    <input matInput placeholder="Enter Patron ID">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Patron Name</mat-label>
+    <input matInput placeholder="Enter Patron Name">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Phone</mat-label>
+    <input matInput placeholder="Enter Phone Number">
+  </mat-form-field>
+
+  <!-- Additional fields as needed -->
+
+  <!-- Close Button -->
+  <button mat-button mat-dialog-close (click)="close()">Close</button>
+</form>
+
+
+<h2 mat-dialog-title>Favorite Animal</h2>
+<mat-dialog-content>
+  My favorite animal is:
+  <ul>
+    <li>
+      @if (data.animal === 'panda') {
+        <span>&#10003;</span>
+      } Panda
+    </li>
+    <li>
+      @if (data.animal === 'unicorn') {
+        <span>&#10003;</span>
+      } Unicorn
+    </li>
+    <li>
+      @if (data.animal === 'lion') {
+        <span>&#10003;</span>
+      } Lion
+    </li>
+  </ul>
+</mat-dialog-content>

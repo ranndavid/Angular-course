@@ -1,0 +1,52 @@
+.mat-tab-label {
+    color: white;
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+}
+
+.mat-tab-label {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: rgb(224, 4, 4);
+    font-weight: 700;
+}
+
+.md-tab.ng-scope.ng-isolate-scope.md-ink-ripple.md-active {
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+}
+
+.md-tab.ng-scope.ng-isolate-scope.md-ink-ripple {
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+}
+
+
+
+.mat-tab-label:active {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+}
+
+.mat-tab-label:selected {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+}
+
+.mat-mdc-tab .mdc-tab__text-label {
+    color: #2cff08;
+    display: inline-flex;
+    align-items: center;
+}
