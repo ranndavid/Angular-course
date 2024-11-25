@@ -41,4 +41,8 @@
     font-style: italic;
     color: gray;
   }
-  
+  .example-button-container{
+    margin-top: 10px;
+    width: 100px;
+    height: 10px;
+  }
