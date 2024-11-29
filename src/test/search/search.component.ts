@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import {MatButtonModule} from '@angular/material/button';
 import { DialogComponent } from './dialog/dialog.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 @Component({
   selector: 'app-search',
   standalone: true,
@@ -48,6 +49,22 @@ export class SearchComponent {
         // Add the new task to the list
         const newTask: Task = { id: this.tasks.length + 1, ...result }; // Generate ID dynamically
         this.tasks.push(newTask);
+      }
+    });
+  }
+  
+  deleteTask(taskId: number, username: string): void {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+      width: '300px',
+      data: { taskId, username } // Pass taskId and username to the dialog
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // User confirmed deletion
+        this.taskService.deleteTask(taskId).subscribe(updatedTasks => {
+          this.tasks = updatedTasks; // Update the tasks list after deletion
+        });
       }
     });
   }

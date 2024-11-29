@@ -19,6 +19,7 @@
           <th>Username</th>
           <th>Address</th>
           <th>Date</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -27,6 +28,14 @@
           <td>{{ task.username }}</td>
           <td>{{ task.address }}</td>
           <td>{{ task.date }}</td>
+          <td>
+              <button style="    height: 30px; width: 30px;
+              background-color: #01dfd5;
+              color: red;
+              margin-left: 20px;" mat-fab aria-label="Example icon button with a delete icon" (click)="deleteTask(task.id, task.username)">
+                 <mat-icon>delete</mat-icon>
+              </button>
+          </td>
         </tr>
         <tr *ngIf="tasks.length === 0">
           <td colspan="4" class="no-data">No tasks found</td>
